@@ -13,7 +13,7 @@ function Bottombar() {
     return (
         <section className="bottombar">
             <div className="bottombar_container">
-            {sidebarLinks.map((link) => {
+                {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
 
                     return (
@@ -28,8 +28,8 @@ function Bottombar() {
                                 width={24}
                                 height={24}
                             />
-                            <p className="text-subtle-medium max-lg:hidden">
-                                {link.label}
+                            <p className="text-subtle-medium text-light-1 max-sm:hidden">
+                                {link.label.split(/\s+/)[0]}
                             </p>
                         </Link>
                     );
