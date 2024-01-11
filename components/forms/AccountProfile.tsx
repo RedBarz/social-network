@@ -19,6 +19,8 @@ import Image from "next/image";
 import { ChangeEvent } from "react";
 import { Textarea } from "../ui/textarea";
 import { useState } from "react";
+import { isBase64Image } from "@/lib/utils";
+import {useUploadThing} from '@/lib/uploadthing'
 
 interface Props {
     user: {
@@ -71,6 +73,10 @@ const handleImage = (e: ChangeEvent<HTMLInputElement>, fieldChange: (value: stri
         const blob = values.profile_photo;
 
         const hasImageChanged = isBase64Image(blob);
+
+        if(hasImageChanged) {
+            const imgRed = 
+        }
     }
 
     return (
