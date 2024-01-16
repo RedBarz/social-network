@@ -145,7 +145,10 @@ export async function fetchUsers({
       connectToDB();
 
       const userThreads = await Thread.find({author: userId});
-      
+
+      const childThreadIds = userThreads.reduce((acc, userThread) => {
+        return acc.concat(userThread.children)
+      })
     } catch (error: any) {
       throw new Error(`Failed to fetch activity: ${error.message}`)
 
