@@ -80,8 +80,8 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
         if (hasImageChanged) {
             const imgRes = await startUpload(files)
 
-            if (imgRes && imgRes[0].fileUrl) {
-                values.profile_photo = imgRes[0].fileUrl;
+            if (imgRes && imgRes[0].url) {
+                values.profile_photo = imgRes[0].url;
             }
         }
 
@@ -93,16 +93,13 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             image: values.profile_photo,
             path: pathname
         });
-        if (pathname === '/profile/edit') 
-        {
+        if (pathname === '/profile/edit') {
 
             router.back();
 
-        } 
-        
-        else 
-        
-        {
+        }
+
+        else {
 
             router.push('/');
 
